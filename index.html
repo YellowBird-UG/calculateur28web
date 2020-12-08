@@ -264,7 +264,7 @@ Coded by www.creative-tim.com
                                                 </div>
 
                                                 <div class="level-item">
-                                                    <br/> <button class="btn mt-4 btn-success" id="calculate-btn" @click="startCalc(); calculateFertileBegin(); calculateFertileEnds(); calculateDueDate();">Calculate</button><br/>
+                                                    <br/> <button class="btn mt-4 btn-success" id="calculate-btn" @click="startCalc(); calculateFertileBegin(); calculateFertileEnds(); calculateDueDate(); calculateMbegins(); calculateMends(); calculateOday();">Calculate</button><br/>
                                                 </div>
                                             </div>
                                         </div>
@@ -273,6 +273,8 @@ Coded by www.creative-tim.com
 
                                             <p class="subtitle">Here are the results based on the information you provided:</p>
                                             <p>Your next most fertile period is <strong>{{ fertileFrom }}</strong> to <strong>{{ fertileUntil }}</strong>.</p>
+                                            <p>Your next most Ovulation Day is <strong>{{ ovulationday }}</strong>.</p>
+                                            <p>Your predictable menstruation period is <strong>{{ menstruationbegins }}</strong> to <strong>{{ menstruationends }}</strong>.</p><br/>
                                             <p>If you conceive within this timeframe, your estimated due date will be <strong>{{ dueDate }}</strong>.</p>
                                             <div class="level-item">
                                                 <br/><button class="btn mt-4 btn-primary" id="resetCalc" @click="resetCalc">Calculate Again</button><br/>
@@ -303,6 +305,11 @@ Coded by www.creative-tim.com
                                                 <h6 class="mb-0">Know your next Fertile Window</h6>
                                             </div>
                                         </li>
+                                        <li class="py-2">
+                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
+                                                <h6 class="mb-0">Predict your next menstruation period</h6>
+                                            </div>
+                                        </li>
                                         <!--<li class="py-2">
                                             <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-satisfied"></i></span>
                                                 <h6 class="mb-0">Super friendly support team</h6>
@@ -318,7 +325,7 @@ Coded by www.creative-tim.com
                     <div class="container">
                         <div class="row row-grid align-items-center">
                             <div class="col-md-6">
-                                <img class="card-img-top" src="assets/img/2screenshot.png" />
+                                <img class="card-img-top" width="2500 px-3" src="assets/img/2screenshot.png" />
                                 <!--<div class="card bg-default shadow border-0"><img class="card-img-top" data-src="img/theme/img-1-1200x1000.jpg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" lazy="loading">
                                     <blockquote class="card-blockquote"><svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg"><polygon points="0,52 583,95 0,95" class="fill-default"></polygon><polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon></svg>
                                         <!--<h4 class="display-3 font-weight-bold text-white">Design System</h4>
@@ -670,13 +677,7 @@ Send Message
     <script src='https://unpkg.com/vuejs-datepicker'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
     <script src="script.js"></script>
-    <script>
-        window.TrackJS &&
-            TrackJS.install({
-                token: "ee6fab19c5a04ac1a32a645abde4613a",
-                application: "argon-design-system-pro"
-            });
-    </script>
+
 </body>
 
 </html>
