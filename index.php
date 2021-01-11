@@ -1,16 +1,3 @@
-<!--
-=========================================================
-* Argon Design System - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +7,7 @@ Coded by www.creative-tim.com
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/brand/logobg.png">
     <title>
-        Claculateur 28
+        Calculatuer 28
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -33,6 +20,170 @@ Coded by www.creative-tim.com
     <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+    <style>
+    body
+{
+    font-family: Arial,sans-serif;
+}
+
+.header
+{
+    font-size: 13px;
+    text-align: right;
+    padding-top: 22px;
+    padding-right: 10px;
+}
+
+.menuItems
+{
+    font-size: 13px;
+    padding-right: 10px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.header a
+{
+    text-decoration: none;
+    color: #000000;
+}
+
+.header a:hover
+{
+    text-decoration: underline;
+}
+
+.menu
+{
+    background-color: white;
+    border:none;
+    outline:none;
+    box-shadow: none;
+    padding-right: none;
+}
+
+.dropdown-content 
+{
+    width: 270px;
+    padding: 28px;
+    margin-right: 82px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    display: none;
+    z-index: 1;
+    position: absolute;
+    right: 0; 
+}
+
+.menuItems:hover .dropdown-content
+{
+    display: block;
+}
+
+.appLogo
+{
+    text-align: center;
+    display: inline-block;
+    width: 86px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown-content .appLogo:hover 
+{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.menuItemLogo
+{
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.userImage
+{
+    border-radius: 50%;
+    margin: -1px;
+    overflow: hidden;
+    position: relative;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.container
+{
+    padding-top: 140px;
+    padding-bottom: 160px;
+}
+
+.search
+{
+    font-size: 13px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 14px;
+    width: 600px;
+    color: #222;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    outline: none;
+}
+
+.container .search:hover
+{
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.container .search:focus-within
+{
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.input
+{
+    text-align: left;
+    width:95%;
+    border: none;
+    outline: none;
+}
+
+.voiceSearch
+{
+    float: right;
+    height: 24px;
+    width: 24px;
+}
+
+.btn
+{
+    display: inline-block;
+    padding-top: 33px;
+    padding: 30px;
+}
+
+.btns
+{
+/*     padding: 18px; */
+    margin-right: 7px;
+    height: 36px;
+    color: #5F6368;
+    font-size: 14px;
+} 
+
+.btns:hover
+{
+    border: 1.5px solid lightslategray;
+    color: black;
+}
+
+    </style>
 </head>
 
 <body class="landing-page">
@@ -159,6 +310,82 @@ Coded by www.creative-tim.com
         <main>
             <div style="transform-origin: center center;">
                 <div class="position-relative">
+                <section class="section section-lg">
+                    <div class="container">
+                        <div class="row row-grid align-items-center">
+                            <div class="col-md-6 order-md-2">
+                                <section id="app" class="section content has-text-centered">
+
+                                     
+    <!-- google image woth search box and buttons -->
+    <div class="container" style="text-align: center; margin-left:250px; margin-top:-350px;">
+        <img src="assets/img/brand/logobg.png" width="300px" height="250px">
+        <br/><br/>
+        <small> Use the form below to find out about your next menstruation cycle</small><br/>
+        
+
+        <!-- search box -->
+        <form method="POST" action=""> 
+        <div class="search">
+            <input type="date" class="input" name="SearchBox">
+            <!--<img class="voiceSearch" src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png">-->
+        </div>
+        <!-- buttons -->
+        <div class="btn">
+            <button type="submit" class="btns">Calculate</button>
+            <button class="btns">Download App</button>
+        </div>
+        <br/><br/>
+        </form>
+        <?php
+
+     $num1 = $_POST["SearchBox"];
+     $text ="Your next menstruation period will begin on";
+    //$num2 = date('Y-m-d', strtotime($num1. ' + 1 days'));;
+    
+     echo "<p class='subtitle'>$text: </p>" ;
+     echo date('F d,Y', strtotime($num1. ' + 28 days'));;
+     
+?>
+        
+        
+        </h2>
+    </div>
+    <div class="pr-md-5" style="margin-top:-150px;">
+                                    <div class="icon icon-shape mb-5 icon-lg icon-shape-success shadow rounded-circle"><i class="ni ni-calendar-grid-58"></i></div>
+                                    <h3>Ovulation Cycle Calculator</h3>
+                                    <p>This right here is a simple ovulation cycle calendar that can help you to get to know when your next fertile window and ovulation day will occur</p>
+                                    <ul class="list-unstyled mt-5">
+                                        <li class="py-2">
+                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
+                                                <h6 class="mb-0">Know your Next Day of Ovulation</h6>
+                                            </div>
+                                        </li>
+                                        <li class="py-2">
+                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
+                                                <h6 class="mb-0">Know your next Fertile Window</h6>
+                                            </div>
+                                        </li>
+                                        <li class="py-2">
+                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
+                                                <h6 class="mb-0">Predict your next menstruation period</h6>
+                                            </div>
+                                        </li>
+                                        <!--<li class="py-2">
+                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-satisfied"></i></span>
+                                                <h6 class="mb-0">Super friendly support team</h6>
+                                            </div>
+                                        </li>-->
+                                    </ul>
+                                </div>
+
+                               
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
                     <section class="section-shaped my-0">
                         <div class="shape shape-style-1 shape-default shape-skew"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                         <div class="container shape-container d-flex">
@@ -240,87 +467,7 @@ Coded by www.creative-tim.com
                         </div>
                     </div>
                 </section>
-                <section class="section section-lg">
-                    <div class="container">
-                        <div class="row row-grid align-items-center">
-                            <div class="col-md-6 order-md-2">
-                                <section id="app" class="section content has-text-centered">
-
-                                    <transition name="fade" mode="out-in">
-                                        <div class="content columns level is-centered
-                                    " v-if="!calcReturned" key="calendar">
-
-                                            <div class="column is-one-third level has-text-centered ">
-                                                <p class="subtitle">Please select the first day of your last menstrual period:</p>
-                                                <vuejs-datepicker :inline="true" v-model="date">{{ date }}</vuejs-datepicker>
-                                            </div>
-
-                                            <div class="column is-one-third has-text-centered level">
-                                                <p>Usual number of days in your cycle:</p>
-                                                <div class="select is-primary">
-                                                    <select name="days" v-model="cycleSelected">
-                                                <option v-for="n in 45" v-if="n >= 20">{{ n }}</option>
-                                              </select>
-                                                </div>
-
-                                                <div class="level-item">
-                                                    <br/> <button class="btn mt-4 btn-success" id="calculate-btn" @click="startCalc(); calculateFertileBegin(); calculateFertileEnds(); calculateDueDate(); calculateMbegins(); calculateMends(); calculateOday();">Calculate</button><br/>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="content has-text-centered" v-else key="result">
-
-                                            <p class="subtitle">Here are the results based on the information you provided:</p>
-                                            <p>Your next most fertile period is <strong>{{ fertileFrom }}</strong> to <strong>{{ fertileUntil }}</strong>.</p>
-                                            <p>Your next most Ovulation Day is <strong>{{ ovulationday }}</strong>.</p>
-                                            <p>Your predictable menstruation period is <strong>{{ menstruationbegins }}</strong> to <strong>{{ menstruationends }}</strong>.</p><br/>
-                                            <p>If you conceive within this timeframe, your estimated due date will be <strong>{{ dueDate }}</strong>.</p>
-                                            <div class="level-item">
-                                                <br/><button class="btn mt-4 btn-primary" id="resetCalc" @click="resetCalc">Calculate Again</button><br/>
-                                            </div>
-
-                                        </div>
-                                    </transition>
-
-                                    <div class="notification is-full"><br/>*Average length will vary by woman. **A woman's best days to conceive can start at least one day prior and last at least one day after fertile date.
-                                    </div>
-
-                                </section>
-
-                            </div>
-                            <div class="col-md-6 order-md-1">
-                                <div class="pr-md-5">
-                                    <div class="icon icon-shape mb-5 icon-lg icon-shape-success shadow rounded-circle"><i class="ni ni-calendar-grid-58"></i></div>
-                                    <h3>Ovulation Cycle Calculator</h3>
-                                    <p>This right here is a simple ovulation cycle calendar that can help you to get to know when your next fertile window and ovulation day will occur</p>
-                                    <ul class="list-unstyled mt-5">
-                                        <li class="py-2">
-                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
-                                                <h6 class="mb-0">Know your Next Day of Ovulation</h6>
-                                            </div>
-                                        </li>
-                                        <li class="py-2">
-                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
-                                                <h6 class="mb-0">Know your next Fertile Window</h6>
-                                            </div>
-                                        </li>
-                                        <li class="py-2">
-                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-watch-time"></i></span>
-                                                <h6 class="mb-0">Predict your next menstruation period</h6>
-                                            </div>
-                                        </li>
-                                        <!--<li class="py-2">
-                                            <div class="d-flex align-items-center"><span class="badge mr-3 badge-success badge-circle"><i class="ni ni-satisfied"></i></span>
-                                                <h6 class="mb-0">Super friendly support team</h6>
-                                            </div>
-                                        </li>-->
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
                 <section class="section bg-secondary">
                     <div class="container">
                         <div class="row row-grid align-items-center">
