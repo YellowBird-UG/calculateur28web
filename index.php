@@ -1,3 +1,4 @@
+<?php error_reporting (E_ALL ^ E_NOTICE); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -333,18 +334,31 @@
         <!-- buttons -->
         <div class="btn">
             <button type="submit" class="btns">Calculate</button>
-            <button class="btns">Download App</button>
+            <a href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app"><button class="btns"> Download  App</button></a>
         </div>
         <br/><br/>
         </form>
         <?php
 
      $num1 = $_POST["SearchBox"];
-     $text ="Your next menstruation period will begin on";
+     $text ="Your next menstruation period will likely begin on";
+     $text2 ="Your next menstruation period will likely end on";
+     $text3 ="Your next Ovulation Day will likely end on";
     //$num2 = date('Y-m-d', strtotime($num1. ' + 1 days'));;
     
-     echo "<p class='subtitle'>$text: </p>" ;
-     echo date('F d,Y', strtotime($num1. ' + 28 days'));;
+     echo "<p class='subtitle'>$text: " ;  echo date('F d,Y', strtotime($num1. ' + 28 days'));
+    
+
+     echo "<p class='subtitle'>$text2: " ;
+     echo date('F d,Y', strtotime($num1. ' + 33 days'));
+
+     echo "<p class='subtitle'>$text3: " ;
+     echo date('F d,Y', strtotime($num1. ' + 15 days'));
+
+    
+
+
+
      
 ?>
         
@@ -394,8 +408,7 @@
                                     <div class="col-lg-6">
                                         <h1 class="display-3  text-white">Calculatuer 28
                                             <span style="font-size: x-small;">Be confident, everyday all day</span></h1>
-                                        <p class="lead  text-white">The design system comes with four pre-built pages to help you get started faster. You can change the text and images and you're good to go.
-                                        </p>
+                                        
                                         <div class="btn-wrapper">
                                             <!--<a type="" class="btn mb-3 mb-sm-0 btn-icon btn-info" href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"><span class="btn-inner--icon"><i class="fa fa-code"></i></span><span class="btn-inner--text">
         Components
