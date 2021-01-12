@@ -115,12 +115,18 @@
     width: 32px;
     vertical-align: middle;
 }
-
-.container
+@media (max-width: 400px) {
+    .container1
 {
     padding-top: 140px;
     padding-bottom: 160px;
+    max-width:100% !important;
+    position: relative;
+    
 }
+
+}
+
 
 .search
 {
@@ -128,20 +134,21 @@
     margin: auto;
     margin-top: 30px;
     padding: 14px;
-    width: 600px;
+    width: 300px;
     color: #222;
     border: 1px solid #dfe1e5;
-    border-radius: 24px;
+    border-radius: 14px;
     outline: none;
 }
 
-.container .search:hover
+
+.container1 .search:hover
 {
     box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
     border-color: rgba(223,225,229,0);
 }
 
-.container .search:focus-within
+.container1 .search:focus-within
 {
     box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
     border-color: rgba(223,225,229,0);
@@ -213,57 +220,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-              <i class="ni ni-ui-04 d-lg-none"></i>
-              <span class="nav-link-inner--text">Components</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-xl">
-              <div class="dropdown-menu-inner">
-                <a href="https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html" class="media d-flex align-items-center">
-                  <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                    <i class="ni ni-spaceship"></i>
-                  </div>
-                  <div class="media-body ml-3">
-                    <h6 class="heading text-primary mb-md-1">Getting started</h6>
-                    <p class="description d-none d-md-inline-block mb-0">Learn how to use compiling Scss, change brand colors and more.</p>
-                  </div>
-                </a>
-                <a href="https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html" class="media d-flex align-items-center">
-                  <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                    <i class="ni ni-palette"></i>
-                  </div>
-                  <div class="media-body ml-3">
-                    <h6 class="heading text-primary mb-md-1">Foundation</h6>
-                    <p class="description d-none d-md-inline-block mb-0">Learn more about colors, typography, icons and the grid system we used for .</p>
-                  </div>
-                </a>
-                <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
-                  <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                    <i class="ni ni-ui-04"></i>
-                  </div>
-                  <div class="media-body ml-3">
-                    <h5 class="heading text-warning mb-md-1">Components</h5>
-                    <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted components offered in the Free version.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-              <i class="ni ni-collection d-lg-none"></i>
-              <span class="nav-link-inner--text">Examples</span>
-            </a>
-            <div class="dropdown-menu">
-              <a href="landing.html" class="dropdown-item">Landing</a>
-              <a href="examples/profile.html" class="dropdown-item">Profile</a>
-              <a href="examples/login.html" class="dropdown-item">Login</a>
-              <a href="examples/register.html" class="dropdown-item">Register</a>
-            </div>
-          </li>
-        </ul>-->
+                
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                     <li class="nav-item">
                         <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
@@ -283,25 +240,7 @@
                             <span class="nav-link-inner--text d-lg-none">Twitter</span>
                         </a>
                     </li>
-                    <!--<li class="nav-item">
-            <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
-              <i class="fa fa-github"></i>
-              <span class="nav-link-inner--text d-lg-none">Github</span>
-            </a>
-          </li>-->
-                    <!--<li class="nav-item">
-            <a class="btn btn-neutral" href="https://www.creative-tim.com/builder/argon" target="_blank">
-              <span class="nav-link-inner--text">Online Builder</span>
-            </a>
-          </li>-->
-                    <!--<li class="nav-item d-none d-lg-block">
-            <a href="https://www.creative-tim.com/product/argon-design-system-pro?ref=ads-upgrade-pro" target="_blank" class="btn btn-neutral btn-icon">
-              <span class="btn-inner--icon">
-                <i class="fa fa-play"></i>
-              </span>
-              <span class="nav-link-inner--text"> Download App</span>
-            </a>
-          </li>-->
+                    
                 </ul>
             </div>
         </div>
@@ -316,10 +255,8 @@
                         <div class="row row-grid align-items-center">
                             <div class="col-md-6 order-md-2">
                                 <section id="app" class="section content has-text-centered">
-
-                                     
-    <!-- google image woth search box and buttons -->
-    <div class="container" style="text-align: center; margin-left:250px; margin-top:-350px;">
+                                <div class="pr-md-5" style=" text-align: center; margin-top:-150px;">
+                                <div class="container1" style="text-align: center;" >
         <img src="assets/img/brand/logobg.png" width="300px" height="250px">
         <br/><br/>
         <small> Use the form below to find out about your next menstruation cycle</small><br/>
@@ -328,7 +265,7 @@
         <!-- search box -->
         <form method="POST" action=""> 
         <div class="search">
-            <input type="date" class="input" name="SearchBox">
+            <input type="date" class="input" style="text-align: center; " name="SearchBox">
             <!--<img class="voiceSearch" src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png">-->
         </div>
         <!-- buttons -->
@@ -343,7 +280,7 @@
      $num1 = $_POST["SearchBox"];
      $text ="Your next menstruation period will likely begin on";
      $text2 ="Your next menstruation period will likely end on";
-     $text3 ="Your next Ovulation Day will likely end on";
+     $text3 ="Your next Ovulation Day will likely be on";
     //$num2 = date('Y-m-d', strtotime($num1. ' + 1 days'));;
     
      echo "<p class='subtitle'>$text: " ;  echo date('F d,Y', strtotime($num1. ' + 28 days'));
@@ -365,7 +302,13 @@
         
         </h2>
     </div>
-    <div class="pr-md-5" style="margin-top:-150px;">
+
+    </div>
+    <br/>
+    <br/>
+    <!-- google image woth search box and buttons -->
+    
+    <div class="pr-md-5" style="margin-top:10px;">
                                     <div class="icon icon-shape mb-5 icon-lg icon-shape-success shadow rounded-circle"><i class="ni ni-calendar-grid-58"></i></div>
                                     <h3>Ovulation Cycle Calculator</h3>
                                     <p>This right here is a simple ovulation cycle calendar that can help you to get to know when your next fertile window and ovulation day will occur</p>
@@ -407,13 +350,14 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <h1 class="display-3  text-white">Calculatuer 28
-                                            <span style="font-size: x-small;">Be confident, everyday all day</span></h1>
+                                            <br/>
+                                            <span style="font-size:medium;">Be confident, everyday all day</span></h1>
                                         
                                         <div class="btn-wrapper">
                                             <!--<a type="" class="btn mb-3 mb-sm-0 btn-icon btn-info" href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"><span class="btn-inner--icon"><i class="fa fa-code"></i></span><span class="btn-inner--text">
         Components
     </span></a>-->
-                                            <a type="" class="btn mb-3 mb-sm-0 btn-icon btn-white" href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app"><span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span><!----><span class="btn-inner--text">
+                                           <br/> <a type="" class="btn mb-3 mb-sm-0 btn-icon btn-white" href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app"><span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span><!----><span class="btn-inner--text">
         Download App
     </span>
     <!---->
