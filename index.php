@@ -21,6 +21,8 @@
     <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link href="assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
     body
 {
@@ -134,11 +136,15 @@
     margin: auto;
     margin-top: 30px;
     padding: 14px;
-    width: 300px;
     color: #222;
     border: 1px solid #dfe1e5;
-    border-radius: 14px;
+    border-radius: 6px;
     outline: none;
+    ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+}
 }
 
 
@@ -160,13 +166,19 @@
     width:95%;
     border: none;
     outline: none;
+    
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 .voiceSearch
 {
     float: right;
-    height: 24px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
+    
 }
 
 .btn
@@ -191,7 +203,18 @@
     color: black;
 }
 
+
+
     </style>
+     <script>
+     $(document).ready(function() {
+        $("#id_imgcalendar").on("click", function(e) {
+       $('#datepickerfrom').datepicker('show');
+   });
+});
+       
+       
+    </script>
 </head>
 
 <body class="landing-page">
@@ -254,27 +277,35 @@
                     <div class="container">
                         <div class="row row-grid align-items-center">
                             <div class="col-md-6 order-md-2">
-                                <section id="app" class="section content has-text-centered">
+                                <section  id="app" class="section content has-text-centered">
                                 <div class="pr-md-5" style=" text-align: center; margin-top:-150px;">
-                                <div class="container1" style="text-align: center;" >
+                                <div class="container1" style="text-align: center;padding-right: -500%;">
         <img src="assets/img/brand/logobg.png" width="300px" height="250px">
         <br/><br/>
-        <small> Use the form below to find out about your next menstruation cycle</small><br/>
+        <small> Use the form below to find out about your next menstruation cycle<br/> by entering the first date  date of your current menstruation period</small><br/>
         
 
         <!-- search box -->
         <form method="POST" action=""> 
-        <div class="search">
-            <input type="date" class="input" style="text-align: center; " name="SearchBox">
-            <!--<img class="voiceSearch" src="https://www.gstatic.com/images/branding/googlemic/2x/googlemic_color_24dp.png">-->
+       
+        <div  class="search">
+        <img  style="text-align: right; padding-top: 3px; "  class="voiceSearch" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDxAPDRAQEA0QDxAQDQ8QFhAOEA8OFRIYFhURFhMZHighGBolHRMWLTEhJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGxAQGisiICUvLy0vLi0rLS0tLS8uLS8rKy0tKy0tLS0tLS0tLSstLS0tLSstLSstLS0tMi0tLS0tLf/AABEIAOEA4QMBEQACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAAAQcEBQYCAwj/xABBEAACAQIBBgoHCAEDBQAAAAAAAQIDEQQFBhIUITFBUVJhYnGBkaHRBxMWMlOSsSI0QnJzk7LBghUjoiUzQ2PC/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAEFAwQGAv/EADQRAQABAgIHBwMDBQEBAAAAAAABAgMEEQUTITFSYZESFBVBUXGBM7HBIqHwIzI00eFCJP/aAAwDAQACEQMRAD8AvEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4YvEqmrva37q4wNVUx1Rv3rcy2AeNcq8tgNcq8tgNcqct+AEPG1eXIAsbU5b8AJ1yry34ANcq8t+ADXKvLfgA1yry34ANcq8t+ADXKvLfgBDxtXlvwAjXavLl4ANeq8t+AE67V5b8AGuVeW/ACY46qtuk3zOzQG1wOMVRWeya3rm40BlAAAAAAAAAAGmypJupbgSVgMMCAAH1wkFKdnuSbtxgbJq6s9q4uADSzaVScF+GTS6gPYAAAAAAPPEuN2A3MIqKtHYgNVlO0JxtZaabfWnv7bgfJASAAyMBJqpG3HbsYHQAAAAAAAAAAGjypK1R9SAw9NANNARpoCFVs7xdmtwHurliaVlCKlwSu2u6wGDTltu3dt3b42+EDLjUAnTQDTQDTQDTQEesQHmU0B9f9WlBbYqfSvovt2AYFbESqS0p2vuSW6K4gMinU2bQPp6xAPWID74GV6kPzIDowAAAAAAAAGqzhy9RwVPTqu8pbKdNe9N/wBLnNjD4au/VlSx3LsW4zlWmUs9K9Wo5xhCCe5bW7c7Zb0aLtRH6pmWlOLr8mJ7U4jodx78Msc+qO9XD2pxHQ7h4ZY59TvVw9qcR0O4jwyxz6neriHnRiOh3E+GWOfU71cQ85sQ+CHcPDLHPqd6uIWc2I4odw8Msc+p3q4n2oxHQ7h4ZY59TvVw9qcR0O4eGWOfVHe7iPanEdDuJ8Msc+p3u4e1OI6HcPDLHPqd7uHtVieh3Dwyxz6ne7iParEdDuHhdjn1O93D2pxHQ7h4XY59TvdxHtTiOh3Dwuxz6ne7jys5sRxQ7h4XY59TvdxPtVieh3Dwuxz6ne7h7V4nodw8Lsc+qO93D2qxPQ7h4XY59Tvdx98Hnliac4z0actF3s09vcyKtFWZjZnCYxlays1s6qOPi1FerrxV50nt2cpPhRU4rB12J27Y9W7Zv03Pd0BpswAAAAAACn/SPXnLKE4yvo04U4wXBo20r9rbOj0dTEWImPNWYqZm45g32uAAAEAAAEEoQBAAAyRAQAAIAEiAAQAbfNCvOnj8LKnfSdaMGlwxlsa7ma2MpiqxVE+jLYmYuRkvc5NcgAAAAAAKl9KFLRx6ly8PTl2qUo//ACjodF1Z2MvSZ/Ctxcf1PhyJYtYAAAAACCRDCACAAEEoAAACAIJAIAAG+zDo6eU8KuBTnN/405S+qRqY+rs4er+ebPh4zuwvA5VbgAAAAAAK49LVH7WFqc1WDfbFrb3l1omrZVHs0cZG2JV8XDSAAAABBIBCAIAACRAQAAIAMCCQCAAB2Popo6WPnPkYefY5SivMrNK1ZWYj1lt4OP6mfJbpzqzAAAAAAAcV6VaN8JSnyK6/5RaLTRVWV2Y9YamLj9ESqwvleACRFwAQhsD1GnJ7oyfUmyJmI3ynKXmSa3prr2ExtQgABBKAAAAWdr2duPg7xn5CCRAAIAIYFi+h+h9rFVOalC/zMpdMVbKKfdv4KN8rKKRvgAAAAAAOa9ItHSybWfDB0prsqRT8Gze0dVliKfn7NfFRnblTZ0qrAAC4GVkzJ1TEVPV0uK8pP3YR435GK9eptU9qp7t25rnKHc5Nzew9Gz0PWVOXP7XdHcikvYy7c88o9IWFFiinmzqmLo0/syqU4PkuUY27DBFuurbETLLNVMeabUq0f/HVjw+7ND9dufOD9NUernstZqwcXPCLQmtrpXejL8t/dfh1G/h9IVRPZu7Y9Wrdw0ZZ0OMas7PY07NcT4i5hoIA90qUpy0YRcpPdGKcn3IiqqKYzmckxEzOUN3gc08TUs6mjRj0vtT+Vf2zSuaQtU/27WxRha537HQYLNXC07OadaXTf2flWx9tyvuaQu1btnt/ts04WiN+15zwpxjgpKCUYqpTsopJe9xE4CZm/nPpJiYiLezk4EvlaBAAA8sC1/RJQtg60+GeJa/xjTh/bZz+l6s7sR6R+ZWWCj9EzzdyVTcAAAAAAAa7OOj6zBYqC3yw9VLr0WZsNV2b1M84Y7sZ0THJQx1qnAAC4Fi5tYBUcNDZ/uVFp1HzvcuxW8Tn8Zd1l2fSNkLSxR2aIabO7Lc4zeHoycUkvWyWyTb26CfBs+pt4HC0zGsqj2YMTemJ7MOSsWrSfTDYidKSnSk4TXDHZ2PjR5roprjs1RnCaappnOFkZFyhrFCNXYpbYzS3Ka3/ANd5zuIs6q5NK0tXO3Tm5HPPBqniFOKsq0XJ/nTtL6rvLbR9yarfZnyaWKo7Nefq0BvtZY2bajHB0pWjG8LyeyN3fe2c9jJmb9ULWxlFuHnG5yYWldafrJr8NNOX/Lcu8m3gr1e3LKOf8zRXiLdPnmjIOW9alVSp6Eaaho3elJ6V9/FuGJwuoinbnnmize1kzs3Plnp9zl+pT/ketH/Xj2lGK+n0V+X6tAgAhgQSLr9HVHQyZh7/AIvWT7JVJNfU5fSNXaxFXx9lthYytQ6U0WwAAAAAAA8VoaUZR5UWu9WJicpzRL89VoaMpR5MpR7nY7GJzjNSzGU5PBKAAB1MM85JJavHYkvffB/iVk6MiZz7f7f9bfe54f3c7jsS6tWdVqznJyte9ua5YW6OxRFMeTWrq7VUy+BkeUBDt8xL6vV4vXu3yRuUuk/qR7fmVhg/7J92Pn9a2H471e77Bk0X/wC/j8vOM/8APy5Atmi+k8ROUVCU5uEVaMW24xXNHcjzFFMTnEbUzVMxlm+R6Q6zMD3sR1UvrMq9KbqPn8NzB76vhs89fucv1Kf8jW0d9ePaWbFfT6K/L5WAADywIZIv/Nuh6vBYaHJoU/4p/wBnIYmrtXap5yurUZURDZGBkAAAAAAAAKFzjo6GNxUFsSxNay4oubaXc0dbh6u1ZonlH2U1yMq5jnLXGZ4AAAkQEFwMrJ+T6uIlo0Y6XHLdCPXIxXb1FqM65/290W6q/wC1Y2S8DHD0Y0k9kU3KW68ntlI569dm7XNUrS3RFFOThc5sprEV7w/7VNOFN8e3bLtf0Rd4OxNq3t3ztlX37nbq2boak22BAAkdXmB72I6qX1mVWlN1Hz+G5g99Xw2een3OX6lP+RraO+vHtLNivp9HAF8rACGBBImMHJqK3yaiut7CM8tplnsfo2EFFKKVkkklxJbkcXM57V89EAAAAAAAABTmf+E/6jXkmrS9XLt9XFf0dNo+Z7vT8/dU4nLWy53VukvE3M5YNhq3SXiM5Nhq3SXiM5Nhq3SXiM5NjY5u4PSxdCL0GnNpqXuv7Et9zBiqpizVMMtnKbkLDWQ4cEMNfm0fI5/X1+tX7rPsU+kMpZMqWVtBLgs3b6GLWQ95OaztyTlBwloaDwqX240tJ1GuOSe9cy7SywN3DxVt/u57vj/rUxNNyY2buThtVfKXiXe1X5wnVHyl4jajODVHyl4jadqDU3yl4jadqHWej/ATcsRouL2Ur3uuGfMVWlasooz5/hu4LbNWXL8tpnrk6osHK7il6ynwt/i6jW0bVE34y9JZsXst7eSv9RfKj4l/tVfag1GXKj4k7TtQjUHyo+I2napT/p75UfEbTt0thm9k6+Mw15KyxFJ8PBNP+jDiZmLNc8pe7VVM10xzXocgvAAAAAAAAABU2eT0sdiL7UpRXdTj/dzq9Hx/81P885UeKn+tV/PJztSFuo2ZjJjic3kh6AAAlCU+sDOyfljE4eSdGrNLhg25U31xewwXcNauxlVTH56vdF6uic4lZub+V44uiqsVozT0asN+jNK/c77Dm8VhpsXOzO7yW9m7FynNxmfWR40Ksa1JJU6zlpRWxRqra++9+xlzozEzcomirfH2/wCK/GWooq7Ubp+7mCzab0SgA7P0b+9ify0frMpdMbqPn8LDR++r4/Lb59/cZfq0v5Gpor/Ij2lnx30Z94VudMpkgCUAQy8jzticO91q9K75tNXMWIjO1VHKfsyWvqU+8fddZxjogAAAAAAAABT+cUr4zEv/AN9Rd0mv6OvwkZWKPaHP35zu1e7WyV9jNhjY1SFuo8TGTJE5ohFtpLe2kutkTOW16bn2Tx/wH80PM0/EMPxfdn7td9GmnBxbjJWlFuMlxNOzRuROcZw152IJQkDtPRtN6WIj+HRpvtu0U+l4jKifdv4CdtUNp6QYp4NN71WhbtTRraKn+v8AEsuN+n8q5OjVKQJCHZejf3sT+Wj9ZlNpndR8/hY6P31fH5bfPv7lL9Wl/I09Ff5Ee0s+O+jPvCuDp1MBCQhBI9UZWlF8Uk+5kVRnEwmJylehw7pQAAAAAAAABTGVZ6WIxElulXrSXbUbOysRlaojlH2c7cnOuqec/dimV4RJX2MJY0ouLTXA7rsPEx5MkVLlyfi41qVOtF3VSCl28K77nH3bc265onyX1FUVUxVCtM78lyoYqcrP1VWTqU5cF3tlHrTv4HR4DERdtRHnGyVTibU0VzPlLSG61wlCx8w8mSo0JVKicZ1mnGL2NU0vs36234HO6TvxcuRTTuj7rXB25poznzYfpFxi0aNBPa26s+ZJWj3ty7jNoi1tqufH+2PH17Ip+XDl6rEgCR2fo497E/lo/WZS6Z3UfP4WGj99Xx+W2z7+5S/VpfyNPRX+RHtLPjvoz7wrg6dTJCEACREtz6iY3oncvSjU0oxkt0oqS7Vc4aqMpmHTROcZvZCQAAAAAAESdk3xICksRO85vjnJ+J2tEZUxDnKt8vnc9PJcCJK+xhLe5qZxao/U17vDSbcZK7dKT3u3CnwrtKvH4HXfro/u+7ewuJ7H6at32d9KNDE0rP1dejLqnF8/M/EoYm5Zr86Z6LPKi5T6w0lbMjByd4+thzRldeKZu06UvxG3Kfhrzgrc+rKyfmpg6MlJU3UktqdV6aT49Hd4GK7pC/cjLPKOWx7owtumc8s/d9st5do4WL05KVW32KMWtOXXyVzs8YbCXL87Iyj1er1+i1G3f6KxyhjZ16s6tV3nN35orgiuZHUWbVNqiKKd0KW5XNdU1Sx0ZHhJIkIdl6OfexP5aP1mUumd1Hz+Fjo/fV8flts+vuUv1aX8jU0V/kR7Sz476M+8K5OmUqABIAQwSuzJE9LD0JcdGn/FHF34yu1Rzl0dqc6I9mWYnsAAAAAAB88TK0JvihJ+B6ojOqIRVuUjJ3bfG7naubQAAAGr7wkw2KrUHejUnTfHBuN+tGK5aorjKuIllouVU7aZybSnndj4q3rlL80KTffompOjsNP/AJ/ef9s0Yu7Hn+0PliM5cdU2SxEkuKChT8YpMyUYHD0bqOuc/d5qxN2d9TVSk2222297e1t9ZtRGWyGCZEekJAkISBnZLytXwzm6ElHT0VK8Yzvo3tv62YL+Gt38tZGeTJbvV2s+z5vtlDODFYin6qtOMoNqTSjCO1btqR4s4KzZq7dEbfeXq5iblyns1Tsas22uEgBAAC5M2p6WCwz46MPocfjIyv1xzl0GHnO1T7NmazMAAAAAAAxMrzccPWkt6pVGvlZlsRndpjnDxdnKiZ5KXOyc6AAAAA0B8ZRsQ9ZoAkkSBIQASSgCAkAAEAAAFuZmTbwGHvwRa7FJo5PSEZYmpfYSc7NLdmk2AAAAAAAGtzklbB4l7v8AYqW69F2NnBxnfo94YcR9Kr2lTx1ygAAAAAANAfJqwSgJSghIEkoAgJAABAAAAAtXMGV8n0uaVVdX+5L+jltKRliavj7LvA/Rj5+7oivbYAAAAAADS55X1DEW5Md3Fpxv4XN3R+XeaM/5sa+L+jUqa51aiLgLgLjIRcZBcCCUDCXmxCcwhCSQJQAAAEAAAAABZvo4vqTvu9fO3Vox3dtzmtL5a/4hc4D6Xy6oq26AAAAAAA+eIoxqQlTmrwnFxkuOLVmiaappmJjfCJiJjKVXZczTxOHk3ThKtQu3GcFpSiuBTjvvzrYdNhtJWrkZVzlKmvYOuif07YabVKvwqvyVPI3dfa4o6tfVV8M9DVKvwqvyVPIa+1xR1NVXwz0NUq/Cq/JU8hr7XFHU1VfDPQ1Sr8Kr8lTyGvtcUdTVV8M9DVKvwqvyVPIa+1xR1NVXwz0NUq/Cq/JU8hr7XFHU1VfDPQ1Sr8Kr8lTyGvtcUdTVV8M9EanV+FV+Sp5DX2uKOpqq+GeiNTq/Cq/JU8iNfb4o6mrr4Z6GqVfhVfkqeROvtcUdTVV8M9DVKvwqv7dTyGvtcUdTVV8M9DVKvwqv7dTyGvtcUdTVV8M9EapW+FV/bqeQ19rijqaqvhnoapW+FV/bqeQ19rijqjVV8M9DVK3wqv7dTyGvtcUdTVV8M9DVK3wqv7dTyGvtcUdTVV8M9DVK3wqv7dTyGvtcUdTVV8M9DVK3wqv7dTyGvtcUdTVV8M9GyyTmzi8TJJU5U6f4qtVOEUuZPbJ9RrX9IWbUbJzn0hmtYS5XO2MoWrkvAQw9GFGlfQgrJve3vcnzttnMXbtV2ua6t8rqiiKKYphlGN7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//2Q==">
+        
+         <input    type="text" onfocus="(this.type='date')" placeholder="Enter the first Date of your current menstruation date" class="input" style="text-align: left; font-size:12px; " name="SearchBox">
+            
         </div>
         <!-- buttons -->
-        <div class="btn">
-            <button type="submit" class="btns">Calculate</button>
-            <a href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app"><button class="btns"> Download  App</button></a>
+        <div class="" style="padding: 0; margin-top: 20px; margin-bottom:15px;">
+            <button type="submit" style="padding: 20px;  margin-right: 15px;" class="btn mb-3 mb-sm-0 btn-icon btn-white">Calculate</button>
+            <a href="https://play.google.com/store/apps/details?id=com.thealphamerc.flutter_healthcare_app"><button style="padding: 20px;   margin-left: 15px;" class="btn mb-3 mb-sm-0 btn-icon btn-white"> Download  App</button></a>
         </div>
         <br/><br/>
         </form>
+
+        <div class="col-lg-12">
+                                        <div class="card border-0 card-lift--hover shadow">
+                                            <!---->
+                                            <div class="card-body py-5">
         <?php
 
      $num1 = $_POST["SearchBox"];
@@ -298,6 +329,9 @@
 
      
 ?>
+                                            </div>
+                                        </div>
+        </div>
         
         
         </h2>
@@ -637,8 +671,8 @@
                                     <h4 style="color: floralwhite; font-size: medium;">Let's get in touch on any of these platforms.</h4>
                                 </div>
                                 <div class="col-lg-6 text-lg-center btn-wrapper">
-                                    <button target="_blank" href="#" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
-                                <span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+                                    <!--<button style="width:10;"  target="_blank" href="#" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                                <span  class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
                               </button>
                                     <button target="_blank" href="#" rel="nofollow" class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
                                 <span class="btn-inner--icon"><i class="fab fa-facebook"></i></span>
@@ -648,7 +682,10 @@
                               </button>
                                     <button target="_blank" href="#" rel="nofollow" class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip" data-original-title="keep up with us">
                                 <span class="btn-inner--icon"><i class="fa fa-linkedin-in"></i></span>
-                              </button>
+                              </button>-->
+                              <!-- Add font awesome icons -->
+<a style="margin-right: 10px;" href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
                                 </div>
                             </div>
                             <hr>
